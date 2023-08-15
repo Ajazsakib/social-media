@@ -16,6 +16,10 @@ const MongoStore = require("connect-mongo")(session);
 
 const sassMiddleware = require("sass-middleware");
 
+const flash = require("connect-flash");
+
+const customMiddleware = require("./config/middleware");
+
 app.use(
   sassMiddleware({
     src: "./assets/scss", // Source directory of your Sass files
@@ -39,6 +43,9 @@ app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
 
 app.use(express.static("./assets"));
+
+// make the upload path available to the browser
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 // setup the view engine
 app.set("view engine", "ejs");
@@ -74,6 +81,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+
+// use flash
+app.use(flash());
+app.use(customMiddleware.setFlash);
 
 // use express router
 app.use("/", require("./routes/"));
