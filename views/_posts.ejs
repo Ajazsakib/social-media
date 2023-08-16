@@ -1,19 +1,21 @@
 <li id="post-<%= post._id %>">
-  <p>
+  <div style="display: flex; justify-content: space-between; margin: 10px 0">
+    <div>
+      <div class="username"><%= post.user.name %></div>
+      <div class="post-content"><%= post.content %></div>
+    </div>
+
     <% if(locals.user && locals.user.id == post.user.id) {%>
-    <small>
+    <div>
       <a class="delete-post-button" href="/posts/destroy/<%= post.id%>"
         >Delete Post</a
       >
-    </small>
+    </div>
     <%}%>
-    <br />
-    <%= post.content %> <br />
-    <%= post.user.name %>
-  </p>
-  <div class="post-comments">
+  </div>
+  <div class="post-comments ml-30">
     <% if(locals.user) {%>
-    <form action="/comments/create" method="POST">
+    <form action="/comments/create" method="POST" id="new-comment-form">
       <input
         type="text"
         name="content"
@@ -25,7 +27,7 @@
     </form>
     <%}%>
   </div>
-  <div class="post-comments-list">
+  <div class="post-comments-list ml-30">
     <ul id="post-comments-<%= post._id%>">
       <% for (comment of post.comments) {%> <%- include('_comments') -%> <%}%>
     </ul>

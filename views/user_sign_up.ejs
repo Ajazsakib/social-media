@@ -1,14 +1,22 @@
-<h1>Signup</h1>
-
-<form action="/users/create" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <input type="password" name="password" placeholder="Your Password" required />
-  <input
-    type="password"
-    name="confirm_password"
-    placeholder="Confirm Password"
-    required
-  />
-  <input type="submit" value="Sign Up" />
-</form>
+<section class="user-form-section">
+  <div class="main-heading">
+    <h2>Signup</h2>
+  </div>
+  <form action="/users/create" method="POST" class="form-box">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input
+      type="password"
+      name="password"
+      placeholder="Your Password"
+      required
+    />
+    <input
+      type="password"
+      name="confirm_password"
+      placeholder="Confirm Password"
+      required
+    />
+    <input type="submit" value="Sign Up" class="btn btn-submit" />
+  </form>
+</section>

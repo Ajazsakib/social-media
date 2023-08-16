@@ -1,11 +1,13 @@
 <li>
-  <p>
+  <div style="display: flex; justify-content: space-between; margin: 10px 0">
+    <div>
+      <div class="username"><%= comment.user.name %></div>
+      <div class="content"><%= comment.content %></div>
+    </div>
     <% if(locals.user && locals.user.id == comment.user.id) {%>
     <small>
       <a href="/comments/destroy/<%= comment.id%>">Delete Comment</a>
     </small>
     <%}%>
-    <br />
-    <%= comment.content %><br /><small><%= comment.user.name %></small>
-  </p>
+  </div>
 </li>

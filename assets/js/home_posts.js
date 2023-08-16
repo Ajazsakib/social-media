@@ -1,19 +1,19 @@
 // method to submit the form data for new post using ajax
 
 let createPost = function () {
-  let newPostForm = $("#new-post-form");
+  let newPostForm = $('#new-post-form');
 
   newPostForm.submit(function (e) {
     e.preventDefault();
 
     $.ajax({
-      type: "post",
-      url: "/posts/create",
+      type: 'post',
+      url: '/posts/create',
       data: newPostForm.serialize(),
       success: function (data) {
         console.log(data);
         let newPost = newPostDom(data.data.post);
-        $("#posts-list-container>ul").prepend(newPost);
+        $('#posts-list-container>ul').append(newPost);
       },
       error: function (error) {
         console.log(error.responsetext);

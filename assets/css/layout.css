@@ -1,3 +1,132 @@
-body {
-    /* text-align: center; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+} 
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #007eff;
+}
+.header h2 {
+    color: #ffffff;
+}
+.header ul {
+    list-style: none;
+    display: flex;
+}
+.header ul li {
+    margin: 0 8px;
+}
+.header ul li a{
+    text-decoration: none;
+    color: #ffffff;
+  
+}
+.user-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+.main-heading {
+    margin: 30px 0;
+}
+.user-form-section .form-box {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #ededed;
+    padding: 30px;
+}
+.user-form-section .form-box input {
+    height: 36px;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border: 1px solid #bdbdbd;
+    color: #333333;
+}
+.user-form-section .form-box input:focus{
+    outline: 0;
+}
+.btn {
+    border: 0;
+    cursor: pointer;
+    height: 36px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #ffffff !important;
+    display: block;
+    width: 100%;
+}
+.btn-submit {
+    background-color: #007eff;
+}
+.container {
+    width: 100%;
+    max-width: 570px;
+    margin: 0 auto
+}
+#feed-posts h4 {
+    margin: 16px 0;
+}
+#feed-posts textarea{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+#feed-posts textarea:focus{
+    outline: 0;
+}
+.container-fluid main-section{
+    width: 100%;
+}
+.container-fluid.main-section{
+    display: flex;
+}   
+#user-friends {
+    width: 20%;
+    margin: 30px 0
+}
+#user-friends h4 {
+    margin-bottom: 16px;
+}
+#user-friends a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+#post-list-container ul{
+    list-style: none;
+}
+#post-list-container ul li .username{
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+#post-list-container ul li .post-content {
+    font-size: 14px;
+    height: auto;
+    min-height: 40px;
+    width: auto;
+    min-width: 180px;
+    max-width: 180px;
+    background-color: #b9b9b9;
+    padding: 8px;
+    border-radius: 6px;
+}
+.ml-30 {
+    margin-left: 30px;
+}
+.post-comments-list li .username{
+    margin-bottom: 0 !important;
+}   
